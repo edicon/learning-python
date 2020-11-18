@@ -1,9 +1,8 @@
 import os
+import asyncio
 import json
 from requests.exceptions import HTTPError
 from aiohttp import ClientSession
-import asyncio
-
 
 GOOGLE_BOOKS_URL = "https://www.googleapis.com/books/v1/volumes?q=isbn:"
 LIST_ISBN = [
@@ -18,7 +17,6 @@ LIST_ISBN = [
     '9780006380832',
     '9780006470229',
 ]
-
 
 def extract_fields_from_response(response):
     """Extract fields from API's response"""
@@ -35,7 +33,6 @@ def extract_fields_from_response(response):
         published_date,
     )
 
-
 async def get_book_details_async(isbn, session):
     """Get book details using Google Books API (asynchronously)"""
     url = GOOGLE_BOOKS_URL + isbn
@@ -49,7 +46,6 @@ async def get_book_details_async(isbn, session):
         print(f"An error ocurred: {err}")
     response_json = await response.json()
     return response_json
-
 
 async def run_program(isbn, session):
     """Wrapper for running program in an asynchronous manner"""

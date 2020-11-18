@@ -17,7 +17,6 @@ LIST_ISBN = [
   '9780006470229',
 ]
 
-
 def extract_fields_from_response(item):
   """Extract fields from API's response"""
   volume_info = item.get("volumeInfo", {})
@@ -31,7 +30,6 @@ def extract_fields_from_response(item):
     description,
     published_date,
   )
-
 
 def get_book_details_seq(isbn, session):
   """Get book details using Google Books API (sequentially)"""
@@ -48,7 +46,6 @@ def get_book_details_seq(isbn, session):
   response_json = response.json()
   items = response_json.get("items", [{}])[0]
   return items
-
 
 with requests.Session() as session:
     for isbn in LIST_ISBN:
