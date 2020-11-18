@@ -1,9 +1,8 @@
-import asyncio
 import os
-import requests
+import json
 from requests.exceptions import HTTPError
-import aiohttp
 from aiohttp import ClientSession
+import asyncio
 
 
 GOOGLE_BOOKS_URL = "https://www.googleapis.com/books/v1/volumes?q=isbn:"
@@ -62,5 +61,21 @@ async def run_program(isbn, session):
         print(f"Exception occured: {err}")
         pass
 
-async with ClientSession() as session:
-    await asyncio.gather(*[run_program(isbn, session) for isbn in LIST_ISBN])
+# async with ClientSession() as session:
+#     await asyncio.gather(*[run_program(isbn, session) for isbn in LIST_ISBN])
+
+async def run_main():
+    """main function"""
+    async with ClientSession() as session:
+        """await asyncio.gather(*[run_program(isbn, session) for isbn in LIST_ISBN])"""
+        await asyncio.gather(*[run_program(isbn, session) for isbn in LIST_ISBN])
+
+asyncio.run(run_main())
+
+# def main():
+#     loop = asyncio.get_event_loop()
+#     loop.run_until_complete(run_main())
+#     loop.close()
+
+# if __name__ == '__main__':
+#     main()
