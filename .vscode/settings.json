@@ -2,7 +2,7 @@
     "gotoSymbolStack.currentStackPosition": 0,
     "gotoSymbolStack.maxStackPosition": 0,
     "gotoSymbolStack.filePositionInfo": [],
-    "python.pythonPath": "/Volumes/myExt/workSpace/python/asyncio/.venv/bin/python3",
+    "python.pythonPath": ".venv/bin/python",
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true
 }
