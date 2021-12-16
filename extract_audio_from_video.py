@@ -1,4 +1,7 @@
+"""
+Extracts audio from video
 # $ youtube-dl -f 18 'https://www.youtube.com/watch?v=JJmcL1N2KQs'
+"""
 import moviepy.editor as mp
 
 my_clip = mp.VideoFileClip(r"Python_Crash_Course.mp4")
