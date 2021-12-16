@@ -1,5 +1,6 @@
 """
 Extract audio from video and convert to text
+-https://towardsdatascience.com/extracting-speech-from-video-using-python-f0ec7e312d38
 """
 import speech_recognition as sr
 import moviepy.editor as mp
